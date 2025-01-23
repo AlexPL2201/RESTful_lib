@@ -20,13 +20,35 @@ class BookAPITests(APITestCase):
             genre='Научная литература'
         )
 
+        self.book3 = Book.objects.create(
+            header='Грокаем машинное обучение',
+            author='Л. Серрано',
+            publication_year='2024-01-01',
+            genre='Научная литература'
+        )
+
+        self.book4 = Book.objects.create(
+            header='Грокаем машинное обучение',
+            author='Л. Серрано',
+            publication_year='2024-01-01',
+            genre='Научная литература'
+        )
+
+        self.book5 = Book.objects.create(
+            header='Грокаем машинное обучение',
+            author='Л. Серрано',
+            publication_year='2024-01-01',
+            genre='Научная литература'
+        )
+
     def test_get_books(self):
         """Тест получения списка всех книг"""
         url = reverse('book-list-create')
+        books_count_before_adding = Book.objects.count()
         response = self.client.get(url)
         books = Book.objects.all()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), books.count())
+        self.assertEqual(response.data['count'], books.count())
 
     def test_create_books(self):
         """Тест создания новой книги"""

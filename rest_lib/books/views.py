@@ -7,12 +7,12 @@ from .serializers import BookSerializer
 from .filters import BookFilter
 
 class StandardResultSetPagination(PageNumberPagination):
-    page_size = 4
+    page_size = 2
     page_size_query_param = 'page_size'
     max_page_size = 100
 
 class BookListCreateView(generics.ListCreateAPIView):
-    queryset = Book.objects.all()
+    queryset = Book.objects.all().order_by('id')
     serializer_class = BookSerializer
     pagination_class = StandardResultSetPagination
     filter_backends = (DjangoFilterBackend,)
