@@ -23,12 +23,13 @@ cd RESTful_lib/rest_lib
 Создайте виртуальное окружение и активируйте его:
 ```
 python -m venv venv
-source venv/bin/activate  # Для Linux/Mac
+source venv/bin/activate  # Для Linux/MacOS
 venv\Scripts\activate     # Для Windows
 ```
 
 Установите необходимые библиотеки:
 ```
+sudo apt-get install python3-tk # Для Linux/MacOS
 pip install -r requirements.txt
 ```
 
