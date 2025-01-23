@@ -14,7 +14,7 @@
 
 Сначала клонируйте репозиторий:
 ```
-git clone [https://github.com/username/book-api.git](https://github.com/AlexPL2201/RESTful_lib.git) 
+git clone https://github.com/AlexPL2201/RESTful_lib.git
 cd RESTful_lib/rest_lib
 ```
 
